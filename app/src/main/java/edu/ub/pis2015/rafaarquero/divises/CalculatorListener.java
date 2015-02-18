@@ -60,7 +60,11 @@ public class CalculatorListener implements TextWatcher {
         return Float.parseFloat(txtComission.getText().toString()) / 100.0f;
     }
 
-    public void change() {
+    public void toggle() {
         this.eur2usd ^= true;
+    }
+
+    public boolean isEurToUsd() {
+        return eur2usd;
     }
 }
