@@ -2,6 +2,8 @@ package edu.ub.pis2015.rafaarquero.divises;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,22 +18,22 @@ public class MainActivity extends ActionBarActivity {
     EditText txtTo;
     TextView lblFrom;
     TextView lblTo;
-    private boolean eur2usd;
+    CalculatorListener calculator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        eur2usd = true;
         txtTipus = (EditText) findViewById(R.id.txtTipus);
         txtComission = (EditText) findViewById(R.id.txtComission);
         txtFrom = (EditText) findViewById(R.id.txtFrom);
         txtTo = (EditText) findViewById(R.id.txtTo);
         lblFrom = (TextView) findViewById(R.id.lblFrom);
         lblTo = (TextView) findViewById(R.id.lblTo);
-    }
 
+        calculator = new CalculatorListener(txtTipus, txtComission, txtFrom, txtTo);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -56,7 +58,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void changeDivises(View v) {
-        eur2usd ^= true;
+        calculator.change();
         if (eur2usd) {
             lblFrom.setText(R.string.EUR);
             lblTo.setText(R.string.USD);
