@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Divises</string>
+    <string name="action_settings">Settings</string>
+    <string name="defaultFrom">1.00</string>
+    <string name="defaultComission">3.0</string>
+    <string name="defaultTipus">1.2456891</string>
+    <string name="lblTipus">Tipus €/$</string>
+    <string name="lblComission">% Comisión</string>
+    <string name="EUR">€</string>
+    <string name="USD">$</string>
+
+</resources>
