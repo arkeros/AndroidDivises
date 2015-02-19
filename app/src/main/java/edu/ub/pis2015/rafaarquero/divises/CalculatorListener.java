@@ -8,20 +8,20 @@ import android.widget.EditText;
  * Created by rarquegi7.alumnes on 18/02/15.
  */
 public class CalculatorListener implements TextWatcher {
-    EditText txtTipus;
-    EditText txtComission;
-    EditText txtFrom;
-    EditText txtTo;
+    private EditText txtTipus;
+    private EditText txtCommission;
+    private EditText txtFrom;
+    private EditText txtTo;
     private boolean eur2usd;
 
-    public CalculatorListener(EditText txtTipus, EditText txtComission, EditText txtFrom, EditText txtTo) {
+    public CalculatorListener(EditText txtTipus, EditText txtCommission, EditText txtFrom, EditText txtTo) {
         this.txtTipus = txtTipus;
-        this.txtComission = txtComission;
+        this.txtCommission = txtCommission;
         this.txtFrom = txtFrom;
         this.txtTo = txtTo;
         eur2usd = true;
         txtTipus.addTextChangedListener(this);
-        txtComission.addTextChangedListener(this);
+        txtCommission.addTextChangedListener(this);
         txtFrom.addTextChangedListener(this);
     }
 
@@ -37,7 +37,10 @@ public class CalculatorListener implements TextWatcher {
 
     @Override
     public void afterTextChanged(Editable s) {
-        txtTo.setText(Float.toString(calcOutput()));
+        try {
+            calc();
+        } catch(NumberFormatException ignored) {
+        }
     }
 
     public float getInput() {
@@ -52,12 +55,15 @@ public class CalculatorListener implements TextWatcher {
             return 1.0f / value;
     }
 
-    public float calcOutput() {
-        return getInput() * (1.0f - getComission()) * getTipus();
+    public float calc() {
+        float output;
+        output =  getInput() * (1.0f - getCommission()) * getTipus();
+        txtTo.setText(Float.toString(output));
+        return output;
     }
 
-    public float getComission() {
-        return Float.parseFloat(txtComission.getText().toString()) / 100.0f;
+    public float getCommission() {
+        return Float.parseFloat(txtCommission.getText().toString()) / 100.0f;
     }
 
     public void toggle() {

@@ -12,7 +12,8 @@
         android:id="@+id/btnChange"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:nestedScrollingEnabled="true" />
+        android:nestedScrollingEnabled="true"
+        android:onClick="toggleDivises" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -45,16 +46,16 @@
         android:id="@+id/txtTipus"
         android:text="@string/defaultTipus"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/txtComission"
-        android:layout_alignStart="@+id/txtComission" />
+        android:layout_alignLeft="@+id/txtCommission"
+        android:layout_alignStart="@+id/txtCommission" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/txtComission"
-        android:text="@string/defaultComission"
+        android:id="@+id/txtCommission"
+        android:text="@string/defaultCommission"
         android:layout_below="@+id/lblTipus"
         android:layout_alignLeft="@+id/txtFrom"
         android:layout_alignStart="@+id/txtFrom" />
@@ -66,18 +67,18 @@
         android:text="@string/lblTipus"
         android:id="@+id/lblTipus"
         android:layout_alignBottom="@+id/txtTipus"
-        android:layout_alignLeft="@+id/lblComission"
-        android:layout_alignStart="@+id/lblComission" />
+        android:layout_alignLeft="@+id/lblCommission"
+        android:layout_alignStart="@+id/lblCommission" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/lblComission"
-        android:id="@+id/lblComission"
-        android:layout_alignBottom="@+id/txtComission"
-        android:layout_toRightOf="@+id/txtComission"
-        android:layout_toEndOf="@+id/txtComission" />
+        android:text="@string/lblCommission"
+        android:id="@+id/lblCommission"
+        android:layout_alignBottom="@+id/txtCommission"
+        android:layout_toRightOf="@+id/txtCommission"
+        android:layout_toEndOf="@+id/txtCommission" />
 
     <TextView
         android:layout_width="wrap_content"

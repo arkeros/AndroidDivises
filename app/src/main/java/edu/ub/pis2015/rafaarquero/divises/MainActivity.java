@@ -10,27 +10,24 @@ import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
-    EditText txtTipus;
-    EditText txtComission;
-    EditText txtFrom;
-    EditText txtTo;
-    TextView lblFrom;
-    TextView lblTo;
-    CalculatorListener calculator;
+    private TextView lblFrom;
+    private TextView lblTo;
+    private CalculatorListener calculator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        txtTipus = (EditText) findViewById(R.id.txtTipus);
-        txtComission = (EditText) findViewById(R.id.txtComission);
-        txtFrom = (EditText) findViewById(R.id.txtFrom);
-        txtTo = (EditText) findViewById(R.id.txtTo);
         lblFrom = (TextView) findViewById(R.id.lblFrom);
         lblTo = (TextView) findViewById(R.id.lblTo);
 
-        calculator = new CalculatorListener(txtTipus, txtComission, txtFrom, txtTo);
+        calculator = new CalculatorListener(
+            (EditText) findViewById(R.id.txtTipus),
+            (EditText) findViewById(R.id.txtCommission),
+            (EditText) findViewById(R.id.txtFrom),
+            (EditText) findViewById(R.id.txtTo)
+        );
     }
 
     @Override
@@ -55,7 +52,7 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void changeDivises(View v) {
+    public void toggleDivises(View v) {
         calculator.toggle();
         if (calculator.isEurToUsd()) {
             lblFrom.setText(R.string.EUR);
