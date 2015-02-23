@@ -7,7 +7,7 @@
     <string name="defaultCommission">3.0</string>
     <string name="defaultTipus">1.2456891</string>
     <string name="lblTipus">Tipus $/€</string>
-    <string name="lblCommission">\% Comisión</string>
+    <string name="lblCommission">% Comisión</string>
     <string name="EUR">€</string>
     <string name="USD">$</string>
 
