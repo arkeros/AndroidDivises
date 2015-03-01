@@ -10,5 +10,6 @@
     <string name="lblCommission">% Comisión</string>
     <string name="EUR">€</string>
     <string name="USD">$</string>
+    <string name="flip">Cambiar</string>
 
 </resources>

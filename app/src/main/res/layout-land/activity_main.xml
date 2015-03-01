@@ -9,7 +9,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
+        android:text="@string/flip"
         android:id="@+id/btnChange"
         android:nestedScrollingEnabled="true"
         android:onClick="toggleDivises"
@@ -23,10 +23,9 @@
         android:ems="10"
         android:id="@+id/txtFrom"
         android:text="@string/defaultFrom"
+        android:numeric="decimal"
         android:layout_above="@+id/btnChange"
-        android:layout_alignRight="@+id/btnChange"
-        android:layout_alignEnd="@+id/btnChange"
-        android:numeric="decimal" />
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -36,8 +35,7 @@
         android:id="@+id/txtTo"
         android:enabled="true"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/btnChange"
-        android:layout_alignEnd="@+id/btnChange" />
+        android:layout_alignLeft="@+id/txtFrom" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -88,8 +86,7 @@
         android:text="@string/USD"
         android:id="@+id/lblTo"
         android:layout_alignBottom="@+id/txtTo"
-        android:layout_toRightOf="@+id/txtTo"
-        android:layout_toEndOf="@+id/txtTo" />
+        android:layout_toRightOf="@+id/txtTo" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -97,8 +94,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/EUR"
         android:id="@+id/lblFrom"
-        android:layout_above="@+id/btnChange"
-        android:layout_toRightOf="@+id/btnChange"
-        android:layout_toEndOf="@+id/btnChange" />
+        android:layout_alignBottom="@+id/txtFrom"
+        android:layout_alignLeft="@+id/lblTo" />
 
 </RelativeLayout>
